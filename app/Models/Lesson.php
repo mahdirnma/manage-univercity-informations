@@ -8,4 +8,30 @@ use Illuminate\Database\Eloquent\Model;
 class Lesson extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'title',
+        'unit_number',
+        'type',
+        'default_semester',
+        'course_id',
+        'lesson_id',
+        'is_active'
+    ];
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+    public function lesson(){
+        return $this->belongsTo(Lesson::class);
+    }
+
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
+    public function units()
+    {
+        return $this->hasMany(Unit::class);
+    }
+
 }
