@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('type');
             $table->string('default_semester');
             $table->foreignId('course_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('lesson_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('lesson_id')->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

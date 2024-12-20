@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('semesters', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->year('year');
+            $table->string('year');
             $table->string('half_year');
             $table->boolean('is_active')->default(true);
             $table->timestamps();
