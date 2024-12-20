@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->integer('all_semesters');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

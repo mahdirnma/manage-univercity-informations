@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('units', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('course_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('lesson_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('semester_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('professor_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('capacity');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
