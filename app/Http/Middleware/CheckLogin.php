@@ -15,9 +15,12 @@ class CheckLogin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!session()->has('student')) {
-            return to_route('student.login.show');
+        if (session()->has('professor')) {
+            return to_route('professor.dashboard');
+        }elseif (session()->has('student')) {
+            return $next($request);
+        }else{
+            return to_route('preLogin');
         }
-        return $next($request);
     }
 }
