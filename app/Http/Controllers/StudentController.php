@@ -51,7 +51,13 @@ class StudentController extends Controller
      */
     public function update(UpdateStudentRequest $request, Student $student)
     {
-        //
+        $status=$student->update($request->validated());
+        if ($status) {
+            return to_route('student.index');
+
+        }else{
+            return to_route('student.edit', $student);
+        }
     }
 
     /**

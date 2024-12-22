@@ -9,7 +9,7 @@
                 <h2 class="text-xl">edit student</h2>
             </div>
             <div class="flex w-full h-4/5">
-                <form action="{{route('student.update','student')}}" method="post" class="w-full h-full flex flex-row-reverse">
+                <form action="{{route('student.update',compact('student'))}}" method="post" class="w-full h-full flex flex-row-reverse">
                     @csrf
                     @method('put')
                     <div class="w-1/2 h-full flex flex-col items-end pr-20 relative">
