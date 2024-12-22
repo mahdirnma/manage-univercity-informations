@@ -16,7 +16,7 @@
             <nav>
                 <ul class="flex flex-row-reverse">
                     <li class="w-64 h-full flex justify-center items-center font-mono text-balance"><a href="{{route('student.index')}}">students</a></li>
-                    <li class="w-64 h-full flex justify-center items-center font-mono text-balance"><a href="{{--{{route('services.index')}}--}}">teachers</a></li>
+                    <li class="w-64 h-full flex justify-center items-center font-mono text-balance"><a href="{{route('professor.index')}}">professors</a></li>
                 </ul>
             </nav>
         </div>

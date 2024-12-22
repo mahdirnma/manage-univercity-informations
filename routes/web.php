@@ -26,7 +26,8 @@ Route::get('/professorLogin', [UserController::class, 'professorLogin'])->name('
 Route::post('/professorLogin', [AuthController::class, 'professorLogin'])->name('professor.login');
 Route::get('/', [UserController::class, 'index'])->name('admin.dashboard')->middleware('auth');
 Route::get('/student/login', [StudentController::class, 'show'])->name('student.dashboard')->middleware('check.login');
-Route::get('/professor/login', [ProfessorController::class, 'index'])->name('professor.dashboard');
+Route::get('/professor/login', [ProfessorController::class, 'show'])->name('professor.dashboard');
 
 Route::resource('student', StudentController::class)->middleware('auth');
+Route::resource('professor', ProfessorController::class)->middleware('auth');
 

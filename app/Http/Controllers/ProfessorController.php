@@ -13,7 +13,8 @@ class ProfessorController extends Controller
      */
     public function index()
     {
-        return view('professor.dashboard');
+        $professors = Professor::where('is_active', 1)->paginate(2);
+        return view('admin.professors.index', compact('professors'));
     }
 
     /**
@@ -37,7 +38,7 @@ class ProfessorController extends Controller
      */
     public function show(Professor $professor)
     {
-        //
+        return view('professor.dashboard');
     }
 
     /**
