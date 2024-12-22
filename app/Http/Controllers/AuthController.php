@@ -42,8 +42,7 @@ class AuthController extends Controller
         foreach($professors as $professor){
             if ($professor->name==$name && $professor->personal_code==$personal_code) {
                 session()->put('professor',$professor);
-                return to_route('professor.dashboard');
-
+                return view('professor.dashboard');
             }else{
                 return to_route('professor.login.show');
             }
