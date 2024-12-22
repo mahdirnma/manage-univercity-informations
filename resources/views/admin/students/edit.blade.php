@@ -15,7 +15,7 @@
                     <div class="w-1/2 h-full flex flex-col items-end pr-20 relative">
                         <div class="w-5/6 h-auto flex flex-row-reverse justify-between pt-4 mb-6">
                             <label for="name" class="font-semibold ml-5">: name</label>
-                            <input type="text" name="name" value="{{$student->name}}" id="title" class="w-2/5 h-8 rounded outline-0 p-2 border border-gray-400">
+                            <input type="text" name="name" value="{{$student->name}}" id="name" class="w-2/5 h-8 rounded outline-0 p-2 border border-gray-400">
                             @error('name')
                             <p class="text-red-700">{{$message}}</p>
                             @enderror
