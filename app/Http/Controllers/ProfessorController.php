@@ -22,7 +22,7 @@ class ProfessorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.professors.create');
     }
 
     /**
@@ -30,7 +30,12 @@ class ProfessorController extends Controller
      */
     public function store(StoreProfessorRequest $request)
     {
-        //
+        $professor=Professor::create($request->validated());
+        if($professor){
+            return to_route('professor.index');
+        }else{
+            return to_route('professor.create');
+        }
     }
 
     /**
