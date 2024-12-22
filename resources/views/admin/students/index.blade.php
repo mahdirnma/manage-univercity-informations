@@ -20,6 +20,7 @@
                         <td class="text-center">phone number</td>
                         <td class="text-center">student number</td>
                         <td class="text-center">name</td>
+                        <td class="text-center">id</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -43,6 +44,7 @@
                             <td class="text-center">{{$student->phone_number}}</td>
                             <td class="text-center">{{$student->student_number}}</td>
                             <td class="text-center">{{$student->name}}</td>
+                            <td class="text-center">{{$student->id}}</td>
                         </tr>
                     @endforeach
                     </tbody>

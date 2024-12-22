@@ -17,25 +17,22 @@ class StudentController extends Controller
         return view('admin.students.index', compact('students'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('admin.students.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(StoreStudentRequest $request)
     {
-        //
+        $student = Student::create($request->validated());
+        if ($student) {
+            return to_route('student.index');
+        }else{
+            return to_route('student.create');
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Student $student)
     {
         return view('student.dashboard');
