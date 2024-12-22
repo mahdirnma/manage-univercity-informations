@@ -48,4 +48,10 @@ class AuthController extends Controller
             }
         }
     }
+
+    public function adminLogout()
+    {
+        Auth::logout();
+        return to_route('preLogin');
+    }
 }
