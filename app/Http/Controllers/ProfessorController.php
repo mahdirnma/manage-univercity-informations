@@ -59,7 +59,12 @@ class ProfessorController extends Controller
      */
     public function update(UpdateProfessorRequest $request, Professor $professor)
     {
-        //
+        $status = $professor->update($request->validated());
+        if($status){
+            return to_route('professor.index');
+        }else{
+            return to_route('professor.edit', $professor);
+        }
     }
 
     /**

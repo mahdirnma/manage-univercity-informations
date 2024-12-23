@@ -9,8 +9,9 @@
                 <h2 class="text-xl">edit professor</h2>
             </div>
             <div class="flex w-full h-4/5">
-                <form action="{{route('professor.update')}}" method="post" class="w-full h-full flex flex-row-reverse">
+                <form action="{{route('professor.update',compact('professor'))}}" method="post" class="w-full h-full flex flex-row-reverse">
                     @csrf
+                    @method('put')
                     <div class="w-1/2 h-full flex flex-col items-end pr-20 relative">
                         <div class="w-5/6 h-auto flex flex-row-reverse justify-between pt-4 mb-6">
                             <label for="name" class="font-semibold ml-5">: name</label>
