@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Lesson;
 use App\Http\Requests\StoreLessonRequest;
 use App\Http\Requests\UpdateLessonRequest;
@@ -22,7 +23,9 @@ class LessonController extends Controller
      */
     public function create()
     {
-        //
+        $lessons= Lesson::where('is_active', 1)->get();
+        $courses= Course::where('is_active', 1)->get();
+        return view('admin.lessons.create', compact('lessons', 'courses'));
     }
 
     /**
