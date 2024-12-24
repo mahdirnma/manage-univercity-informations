@@ -11,7 +11,7 @@ class StoreRegistrationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,8 @@ class StoreRegistrationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'semester_id' => 'required|integer|exists:semesters,id',
+            'unit_id' => 'required|integer|exists:units,id',
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRegistrationRequest;
+use App\Models\Registration;
 use App\Models\Semester;
 use App\Models\Student;
 use App\Models\Unit;
@@ -18,6 +19,13 @@ class RegistrationController extends Controller
     }
     public function store(StoreRegistrationRequest $request,Student $student)
     {
-
+        $semester=$request->input('semester_id');
+        $unit=$request->input('unit_id');
+        $status=Registration::create([
+            'semester_id'=>$semester,
+            'student_id'=>$student->id,
+        ]);
+        $status->units()->attach($unit);
+        return to_route('student.index');
     }
 }
