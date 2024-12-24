@@ -16,4 +16,9 @@ class Student extends Model
         'level',
         'is_active'
     ];
+
+    public function semesters()
+    {
+        return $this->belongsToMany(Semester::class);
+    }
 }

@@ -18,4 +18,10 @@ class Semester extends Model
     {
         return $this->hasMany(Unit::class);
     }
+
+    public function students()
+    {
+        return $this->belongsToMany(Student::class);
+
+    }
 }

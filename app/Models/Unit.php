@@ -29,4 +29,9 @@ class Unit extends Model
     {
         return $this->belongsTo(Semester::class);
     }
+
+    public function registrations()
+    {
+        return $this->belongsToMany(Registration::class);
+    }
 }
