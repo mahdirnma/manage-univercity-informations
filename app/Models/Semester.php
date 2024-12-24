@@ -22,6 +22,9 @@ class Semester extends Model
     public function students()
     {
         return $this->belongsToMany(Student::class);
-
+    }
+    public function registrations()
+    {
+        return $this->hasMany(Registration::class);
     }
 }

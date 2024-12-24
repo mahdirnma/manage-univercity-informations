@@ -42,4 +42,5 @@ Route::resource('unit',UnitController::class)->middleware('auth');
 Route::get('/student/registration/create/{student}', [RegistrationController::class, 'create'])->name('student.registration.create')->middleware('auth');
 Route::post('/student/registration/store/{student}', [RegistrationController::class, 'store'])->name('student.registration.store')->middleware('auth');
 Route::get('/Master/unit', [MasterController::class,'units'])->name('Master.units');
+Route::get('/Master/unit/student/{unit}', [MasterController::class,'students'])->name('master.unit.student');
 

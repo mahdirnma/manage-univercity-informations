@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Unit;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -11,5 +12,11 @@ class MasterController extends Controller
         $professor=session('professor');
         $units=$professor->units()->paginate(2);
         return view('professor.units', compact('professor','units'));
+    }
+
+    public function students(Unit $unit)
+    {
+        $registrations=$unit->registrations()->paginate(2);
+        return view('professor.students', compact('unit','registrations'));
     }
 }

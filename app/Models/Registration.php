@@ -18,4 +18,12 @@ class Registration extends Model
     {
         return $this->belongsToMany(Unit::class);
     }
+
+    public function semester()
+    {
+        return $this->belongsTo(Semester::class);
+    }
+    public function student(){
+        return $this->belongsTo(Student::class);
+    }
 }
