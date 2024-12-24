@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\ProfessorController;
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\UserController;
@@ -36,4 +37,7 @@ Route::resource('professor', ProfessorController::class)->middleware('auth');
 Route::resource('course',CourseController::class)->middleware('auth');
 Route::resource('lesson',LessonController::class)->middleware('auth');
 Route::resource('unit',UnitController::class)->middleware('auth');
+
+Route::get('/student/registration/create/{student}', [RegistrationController::class, 'create'])->name('student.registration.create')->middleware('auth');
+Route::post('/student/registration/store/{student}', [RegistrationController::class, 'store'])->name('student.registration.store')->middleware('auth');
 

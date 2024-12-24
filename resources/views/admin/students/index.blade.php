@@ -15,6 +15,7 @@
                     <tr class="h-12 border border-gray-400 border-b-2 border-b-gray-400">
                         <td class="text-center">delete</td>
                         <td class="text-center">update</td>
+                        <td class="text-center">registration in the course</td>
                         <td class="text-center">level</td>
                         <td class="text-center">field</td>
                         <td class="text-center">phone number</td>
@@ -37,6 +38,12 @@
                                 <form action="{{route('student.edit',compact('student'))}}" method="get">
                                     @csrf
                                     <button type="submit" class="text-cyan-600">update</button>
+                                </form>
+                            </td>
+                            <td class="text-center">
+                                <form action="{{route('student.registration.create',compact('student'))}}" method="get">
+                                    @csrf
+                                    <button type="submit" class="text-amber-700">registration</button>
                                 </form>
                             </td>
                             <td class="text-center">{{$student->level}}</td>

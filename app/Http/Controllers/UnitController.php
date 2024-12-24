@@ -37,7 +37,13 @@ class UnitController extends Controller
      */
     public function store(StoreUnitRequest $request)
     {
-        //
+        $unit= Unit::create($request->validated());
+        if ($unit) {
+            return to_route('lesson.index');
+
+        } else {
+            return to_route('unit.create');
+        }
     }
 
     /**
