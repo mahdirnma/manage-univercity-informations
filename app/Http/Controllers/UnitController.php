@@ -52,7 +52,9 @@ class UnitController extends Controller
      */
     public function show(Unit $unit)
     {
-        return view('admin.units.show', compact('unit'));
+        $capacity=$unit->registrations()->count();
+        $remain_capacity=$unit->capacity-$capacity;
+        return view('admin.units.show', compact('unit','remain_capacity'));
     }
 
     /**
