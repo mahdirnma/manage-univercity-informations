@@ -19,6 +19,7 @@
                     <li class="w-64 h-full flex justify-center items-center font-mono text-balance"><a href="{{route('professor.index')}}">professors</a></li>
                     <li class="w-64 h-full flex justify-center items-center font-mono text-balance"><a href="{{route('course.index')}}">courses</a></li>
                     <li class="w-64 h-full flex justify-center items-center font-mono text-balance"><a href="{{route('lesson.index')}}">lessons</a></li>
+                    <li class="w-64 h-full flex justify-center items-center font-mono text-balance"><a href="{{route('unit.index')}}">units</a></li>
                 </ul>
             </nav>
         </div>

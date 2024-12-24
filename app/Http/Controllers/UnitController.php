@@ -17,7 +17,8 @@ class UnitController extends Controller
      */
     public function index()
     {
-        //
+        $units = Unit::where('is_active', 1)->paginate(2);
+        return view('admin.units.index', compact('units'));
     }
 
     /**
@@ -51,7 +52,7 @@ class UnitController extends Controller
      */
     public function show(Unit $unit)
     {
-        //
+        return view('admin.units.show', compact('unit'));
     }
 
     /**
