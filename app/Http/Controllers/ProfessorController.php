@@ -75,4 +75,9 @@ class ProfessorController extends Controller
         $professor->update(['is_active' => 0]);
         return to_route('professor.index');
     }
+
+    public function units(Professor $professor)
+    {
+
+    }
 }
