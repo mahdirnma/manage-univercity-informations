@@ -33,7 +33,12 @@ class LessonController extends Controller
      */
     public function store(StoreLessonRequest $request)
     {
-        //
+        $lesson = Lesson::create($request->validated());
+        if($lesson){
+            return to_route('lesson.index');
+        }else{
+            return to_route('lesson.create');
+        }
     }
 
     /**

@@ -22,9 +22,9 @@
                         <div class="w-5/6 h-auto flex flex-row-reverse justify-between pt-4 mb-6">
                             <label for="unit_number" class="font-semibold ml-5">: unit number</label>
                             <select name="unit_number" id="unit_number" class="cursor-pointer w-2/5 h-8 rounded outline-0 pl-2 border border-gray-400">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
                             </select>
                             @error('unit_number')
                             <p class="text-red-700">{{$message}}</p>
@@ -58,16 +58,26 @@
                         <div class="w-5/6 h-auto flex flex-row-reverse justify-between pt-4 mb-6">
                             <label for="default_semester" class="font-semibold ml-5">: default semester</label>
                             <select name="default_semester" id="default_semester" class="cursor-pointer w-2/5 h-8 rounded outline-0 pl-2 border border-gray-400">
-                                <option value="01">01</option>
-                                <option value="02">02</option>
-                                <option value="03">03</option>
-                                <option value="04">04</option>
-                                <option value="05">05</option>
-                                <option value="06">06</option>
-                                <option value="07">07</option>
-                                <option value="08">08</option>
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                                <option value=6>6</option>
+                                <option value=7>7</option>
+                                <option value=8>8</option>
                             </select>
                             @error('default_semester')
+                            <p class="text-red-700">{{$message}}</p>
+                            @enderror
+                        </div>
+                        <div class="w-5/6 h-auto flex flex-row-reverse justify-between pt-4 mb-6">
+                            <label for="type" class="font-semibold ml-5">: type</label>
+                            <select name="type" id="type" class="cursor-pointer w-2/5 h-8 rounded outline-0 pl-2 border border-gray-400">
+                                <option value='general'>general</option>
+                                <option value='private'>private</option>
+                            </select>
+                            @error('type')
                             <p class="text-red-700">{{$message}}</p>
                             @enderror
                         </div>
