@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LessonController;
 use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
@@ -32,4 +33,5 @@ Route::get('/professor/login', [ProfessorController::class, 'show'])->name('prof
 Route::resource('student', StudentController::class)->middleware('auth');
 Route::resource('professor', ProfessorController::class)->middleware('auth');
 Route::resource('course',CourseController::class)->middleware('auth');
+Route::resource('lesson',LessonController::class)->middleware('auth');
 
