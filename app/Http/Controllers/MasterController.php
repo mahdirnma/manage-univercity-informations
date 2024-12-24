@@ -32,4 +32,12 @@ class MasterController extends Controller
         }
         return $score->score();*/
     }
+
+    public function scoreCreate(Unit $unit, Registration $registration,Request $request)
+    {
+        $score=$request->input('score');
+        $unit->registrations()->detach($registration);
+        $unit->registrations()->attach($registration,['score'=>$score]);
+        return to_route('master.unit.student',compact('unit'));
+    }
 }

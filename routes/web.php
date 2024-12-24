@@ -44,4 +44,5 @@ Route::post('/student/registration/store/{student}', [RegistrationController::cl
 Route::get('/Master/unit', [MasterController::class,'units'])->name('Master.units');
 Route::get('/Master/unit/student/{unit}', [MasterController::class,'students'])->name('master.unit.student');
 Route::get('/Master/unit/student/score/{unit}/{registration}', [MasterController::class,'score'])->name('master.student.score');
+Route::post('/Master/unit/student/score/create/{unit}/{registration}', [MasterController::class,'scoreCreate'])->name('master.score.create');
 
