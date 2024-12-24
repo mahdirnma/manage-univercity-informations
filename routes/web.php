@@ -43,4 +43,5 @@ Route::get('/student/registration/create/{student}', [RegistrationController::cl
 Route::post('/student/registration/store/{student}', [RegistrationController::class, 'store'])->name('student.registration.store')->middleware('auth');
 Route::get('/Master/unit', [MasterController::class,'units'])->name('Master.units');
 Route::get('/Master/unit/student/{unit}', [MasterController::class,'students'])->name('master.unit.student');
+Route::get('/Master/unit/student/score/{unit}/{registration}', [MasterController::class,'score'])->name('master.student.score');
 

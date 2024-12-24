@@ -32,6 +32,7 @@ class Unit extends Model
 
     public function registrations()
     {
-        return $this->belongsToMany(Registration::class);
+        return $this->belongsToMany(Registration::class)
+            ->withPivot('score');
     }
 }
