@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('semester_id');
             $table->unsignedBigInteger('student_id');
-            $table->foreign('semester_id')->references('id')->on('semesters');
-            $table->foreign('student_id')->references('id')->on('students');
+            $table->foreign('semester_id')->references('id')->on('semesters')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade')->onUpdate('cascade');
+            $table->boolean('status')->default(true);
+            $table->decimal('gpa')->nullable();
             $table->timestamps();
         });
     }

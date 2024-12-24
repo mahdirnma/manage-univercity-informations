@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('unit_registration', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('unit_id');
-            $table->unsignedBigInteger('registration_id');
-            $table->foreign('unit_id')->references('id')->on('units');
-            $table->foreign('registration_id')->references('id')->on('registration');
+            $table->foreignId('unit_id')->constrained('units');
+            $table->foreignId('registration_id')->constrained('registrations');
             $table->decimal('score')->nullable();
             $table->timestamps();
         });
