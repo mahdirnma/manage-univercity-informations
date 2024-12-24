@@ -76,8 +76,4 @@ class ProfessorController extends Controller
         return to_route('professor.index');
     }
 
-    public function units(Professor $professor)
-    {
-
-    }
 }
