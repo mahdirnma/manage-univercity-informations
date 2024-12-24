@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\Lesson;
+use App\Models\Professor;
+use App\Models\Semester;
 use App\Models\Unit;
 use App\Http\Requests\StoreUnitRequest;
 use App\Http\Requests\UpdateUnitRequest;
@@ -21,7 +25,11 @@ class UnitController extends Controller
      */
     public function create()
     {
-        //
+        $courses = Course::where('is_active', 1)->get();
+        $lessons = Lesson::where('is_active', 1)->get();
+        $semesters = Semester::where('is_active', 1)->get();
+        $professors = Professor::where('is_active', 1)->get();
+        return view('admin.lessons.assignment', compact('courses', 'lessons', 'semesters', 'professors'));
     }
 
     /**
