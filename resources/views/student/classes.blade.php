@@ -24,12 +24,7 @@
                     <tbody>
                     @foreach($units as $unit)
                         <tr>
-                            <td class="text-center">
-                                <form action="{{--{{route('master.student.score',compact('unit','registration'))}}--}}" method="get">
-                                    @csrf
-                                    <button type="submit" class="text-cyan-600">score</button>
-                                </form>
-                            </td>
+                            <td class="text-center">{{$unit->pivot->score!=null?$unit->pivot->score:'no score is given'}}</td>
                             <td class="text-center">{{$unit->capacity}}</td>
                             <td class="text-center">{{$unit->professor->name}}</td>
                             <td class="text-center">{{$unit->semester->title}}</td>
