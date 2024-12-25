@@ -7,6 +7,11 @@
         <div class="w-[90%] h-5/6 bg-white rounded-xl pt-3 flex flex-col items-center">
             <div class="w-[90%] h-1/5 flex justify-between items-center border-b">
                 <a href="{{route('student.create')}}" class="px-10 py-3 rounded-xl font-light text-white bg-gray-800">add student +</a>
+                <form action="" method="get" class="w-3/6 h-14 flex flex-row-reverse items-center">
+                    <input type="text" name="field" value="{{old('field')}}" id="field" placeholder="field" class="w-1/4 h-8 rounded outline-0 p-2 border border-gray-400 ml-3">
+                    <input type="number" name="student_number" step="0" value="{{old('student_number')}}" min="0" id="student_number" placeholder="student number" class="w-1/3 h-8 rounded outline-0 p-2 border border-gray-400 ml-3">
+                    <button type="submit" class="w-1/6 h-10 border rounded border-gray-500 text-gray-600 mr-5">search</button>
+                </form>
                 <h2 class="text-xl">students</h2>
             </div>
             <div class="w-[90%] h-3/5 flex flex-col justify-center">
