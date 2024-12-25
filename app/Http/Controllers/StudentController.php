@@ -5,15 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
+use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $students = Student::where('is_active', 1)->paginate(2);
+        $students = Student::where('is_active', 1);
+        if ($request->field) {
+            $students=$students->where('field','like','%'.$request->field.'%');
+        }
+        if ($request->student_number){
+            $students=$students->where('student_number','like','%'.$request->student_number.'%');
+        }
+        $students=$students->paginate(2);
         return view('admin.students.index', compact('students'));
     }
 
