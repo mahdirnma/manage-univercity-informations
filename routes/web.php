@@ -48,4 +48,5 @@ Route::get('/Master/unit/student/score/{unit}/{registration}', [MasterController
 Route::post('/Master/unit/student/score/create/{unit}/{registration}', [MasterController::class,'scoreCreate'])->name('master.score.create');
 
 Route::get('/collegian/profile',[CollegianController::class,'profile'])->name('collegian.profile')->middleware('check.login');
+Route::get('/collegian/classes',[CollegianController::class,'classes'])->name('collegian.classes')->middleware('check.login');
 
