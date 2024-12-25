@@ -13,6 +13,7 @@
                 <table class="w-full min-h-full border border-gray-400">
                     <thead>
                     <tr class="h-12 border border-gray-400 border-b-2 border-b-gray-400">
+                        <td class="text-center">semester GPA</td>
                         <td class="text-center">score</td>
                         <td class="text-center">capacity</td>
                         <td class="text-center">professor</td>
@@ -24,6 +25,12 @@
                     <tbody>
                     @foreach($units as $unit)
                         <tr>
+                            <td class="text-center">
+                                <form action="{{route('collegian.gpa',compact('unit'))}}" method="get">
+                                    @csrf
+                                    <button type="submit" class="text-cyan-600">semester GPA</button>
+                                </form>
+                            </td>
                             <td class="text-center">{{$unit->pivot->score!=null?$unit->pivot->score:'no score is given'}}</td>
                             <td class="text-center">{{$unit->capacity}}</td>
                             <td class="text-center">{{$unit->professor->name}}</td>

@@ -49,4 +49,5 @@ Route::post('/Master/unit/student/score/create/{unit}/{registration}', [MasterCo
 
 Route::get('/collegian/profile',[CollegianController::class,'profile'])->name('collegian.profile')->middleware('check.login');
 Route::get('/collegian/classes',[CollegianController::class,'classes'])->name('collegian.classes')->middleware('check.login');
+Route::get('/collegian/semester/gpa/{unit}',[CollegianController::class,'gpa'])->name('collegian.gpa')->middleware('check.login');
 
