@@ -27,8 +27,7 @@ Route::get('/adminLogin', [UserController::class, 'adminLogin'])->name('admin.lo
 Route::post('/adminLogin', [AuthController::class, 'adminLogin'])->name('admin.login');
 Route::post('/adminLogout', [AuthController::class, 'adminLogout'])->name('admin.logout');
 Route::post('/studentLogout', [AuthController::class, 'studentLogout'])->name('student.logout');
-
-
+Route::post('/professorLogout', [AuthController::class, 'professorLogout'])->name('professor.logout');
 Route::get('/studentLogin', [UserController::class, 'studentLogin'])->name('student.login.show');
 Route::post('/studentLogin', [AuthController::class, 'studentLogin'])->name('student.login');
 Route::get('/professorLogin', [UserController::class, 'professorLogin'])->name('professor.login.show');
