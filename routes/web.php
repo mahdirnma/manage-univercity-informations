@@ -36,21 +36,21 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/studentLogin','studentLogin')->name('student.login.show');
     Route::get('/professorLogin','professorLogin')->name('professor.login.show');
     Route::get('/','index')->name('admin.dashboard')->middleware('auth');
-    Route::get('/student/login','show')->name('student.dashboard')->middleware('check.login');
-    Route::get('/professor/login','show')->name('professor.dashboard');
 });
-Route::prefix('/student')->group(function () {
-    Route::resource('student', StudentController::class)->middleware('auth');
-    Route::get('/registration/create/{student}', [RegistrationController::class, 'create'])->name('student.registration.create')->middleware('auth');
-    Route::post('/registration/store/{student}', [RegistrationController::class, 'store'])->name('student.registration.store')->middleware('auth');
 
-});
+Route::get('/student/login',[StudentController::class,'show'])->name('student.dashboard')->middleware('check.login');
+Route::get('/professor/login',[ProfessorController::class,'show'])->name('professor.dashboard');
+Route::resource('student', StudentController::class)->middleware('auth')->middleware('check.login');
+Route::get('/student/registration/create/{student}', [RegistrationController::class, 'create'])->name('student.registration.create')->middleware('auth');
+Route::post('/student/registration/store/{student}', [RegistrationController::class, 'store'])->name('student.registration.store')->middleware('auth');
+
+
 Route::resource('professor', ProfessorController::class)->middleware('auth');
 Route::resource('course',CourseController::class)->middleware('auth');
 Route::resource('lesson',LessonController::class)->middleware('auth');
 Route::resource('unit',UnitController::class)->middleware('auth');
 
-Route::get('/Master/unit', [MasterController::class,'units'])->name('Master.units')/*->middleware('check.login')*/;
+Route::get('/Master/unit', [MasterController::class,'units'])->name('Master.units');
 Route::get('/Master/unit/student/{unit}', [MasterController::class,'students'])->name('master.unit.student');
 Route::get('/Master/unit/student/score/{unit}/{registration}', [MasterController::class,'score'])->name('master.student.score');
 Route::post('/Master/unit/student/score/create/{unit}/{registration}', [MasterController::class,'scoreCreate'])->name('master.score.create');
